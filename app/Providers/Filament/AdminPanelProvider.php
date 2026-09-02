@@ -50,6 +50,8 @@ class AdminPanelProvider extends PanelProvider
                 DisableBladeIconComponents::class,
                 DispatchServingFilamentEvent::class,
             ])
+            ->brandLogo(asset('images/Panxaplena.png'))
+            ->brandLogoHeight('5rem')
             ->authMiddleware([
                 Authenticate::class,
             ]);
