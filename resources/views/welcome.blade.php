@@ -17,6 +17,7 @@
             min-height: 100vh;
             display: flex;
             flex-direction: column;
+            position: relative;
         }
 
         /* Contenedor del Logo */
@@ -27,6 +28,7 @@
             width: 100%;
             box-sizing: border-box;
             overflow: none;
+            margin-top: 10em;
         }
 
         .logo-container img {
@@ -34,7 +36,34 @@
             width: min(80vw, 540px);
             max-width: 540px;
             height: auto;
-            margin: 40% auto;
+        }
+
+        /* Enlaces en esquina superior derecha, apilados */
+        .top-links {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            z-index: 50;
+        }
+
+        .top-links a {
+            background: #2f2f2f;
+            color: #ffffff;
+            text-decoration: none;
+            padding: 8px 14px;
+            border-right: 4px solid black;
+            border-radius: 4px 0 0 4px;
+            display: block;
+            transition: border-color 150ms ease, border-color 150ms ease, color 150ms ease;
+            font-weight: 600;
+        }
+
+        .top-links a:hover {
+            border-right-color: magenta;
+            color: #ffffff;
         }
 
         
@@ -43,8 +72,14 @@
 <body>
 
     <header class="logo-container">
-        <a href="/admin"><img src="{{ asset('images/Panxaplena.png') }}" alt="Panxaplena Logo"></a>
+        <img src="{{ asset('images/Panxaplena.png') }}" alt="Panxaplena Logo">
     </header>
+
+    <div class="top-links">
+        <a href="/admin">Login</a>
+        <a href="/export/menu">Menu</a>
+        <a href="/export/shopping-list">Shopping List</a>
+    </div>
 
 </body>
 </html>

@@ -1,7 +1,7 @@
 <?php
 
-use App\Filament\Widgets\CurrentMenuData;
 use App\Models\Ingredient;
+use App\Services\CurrentMenuData;
 use App\Models\IngredientCategory;
 use App\Models\Menu;
 use App\Models\MenuRecipe;
@@ -93,7 +93,8 @@ it('builds dashboard rows for the current menu and shopping list', function () {
         [
             'day' => 'monday',
             'meal' => 'lunch',
-            'recipes' => 'Ensalada (2)',
+            'recipes' => 'Ensalada',
+            'quantity' => 2,
         ],
     ])->and(CurrentMenuData::shoppingRows($menu))->toBe([
         [
