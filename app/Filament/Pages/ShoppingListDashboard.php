@@ -3,10 +3,10 @@
 namespace App\Filament\Pages;
 
 use App\Filament\Widgets\CurrentShoppingListWidget;
-use Filament\Pages\Dashboard as BaseDashboard;
-use UnitEnum;
 use BackedEnum;
+use Filament\Pages\Dashboard as BaseDashboard;
 use Filament\Support\Icons\Heroicon;
+use UnitEnum;
 
 class ShoppingListDashboard extends BaseDashboard
 {
@@ -17,6 +17,7 @@ class ShoppingListDashboard extends BaseDashboard
     protected static ?string $title = 'Shopping List';
 
     protected static BackedEnum|string|null $navigationIcon = Heroicon::ShoppingBag;
+
     protected static UnitEnum|string|null $navigationGroup = 'Dashboard';
 
     public function getWidgets(): array

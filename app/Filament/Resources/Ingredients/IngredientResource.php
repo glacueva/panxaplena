@@ -2,7 +2,10 @@
 
 namespace App\Filament\Resources\Ingredients;
 
+use App\Filament\Resources\Ingredients\Pages\EditIngredient;
 use App\Filament\Resources\Ingredients\Pages\ListIngredients;
+use App\Filament\Resources\Ingredients\Pages\ViewIngredient;
+use App\Filament\Resources\Ingredients\RelationManagers\StocksRelationManager;
 use App\Filament\Resources\Ingredients\Schemas\IngredientForm;
 use App\Filament\Resources\Ingredients\Tables\IngredientsTable;
 use App\Models\Ingredient;
@@ -18,6 +21,7 @@ class IngredientResource extends Resource
     protected static ?string $model = Ingredient::class;
 
     protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedRectangleStack;
+
     protected static UnitEnum|string|null $navigationGroup = 'Settings';
 
     public static function form(Schema $schema): Schema
@@ -34,12 +38,15 @@ class IngredientResource extends Resource
     {
         return [
             //
+            StocksRelationManager::class,
         ];
     }
 
     public static function getPages(): array
     {
         return [
+            'view' => ViewIngredient::route('/{record}'),
+            'edit' => EditIngredient::route('/{record}/edit'),
             'index' => ListIngredients::route('/'),
         ];
     }

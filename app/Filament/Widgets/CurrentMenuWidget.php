@@ -9,7 +9,7 @@ use Filament\Widgets\TableWidget;
 
 class CurrentMenuWidget extends TableWidget
 {
-    protected int | string | array $columnSpan = 'full';
+    protected int|string|array $columnSpan = 'full';
 
     public function table(Table $table): Table
     {
@@ -22,8 +22,8 @@ class CurrentMenuWidget extends TableWidget
                 TextColumn::make('recipes'),
                 TextColumn::make('quantity'),
             ])
-            ->groups(['day','meal'])
+            ->groups(['day', 'meal'])
             ->defaultGroup('day')
-            ->records(fn() => CurrentMenuData::menuRows());
+            ->records(fn () => CurrentMenuData::menuRows());
     }
 }

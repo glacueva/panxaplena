@@ -1,9 +1,8 @@
 <?php
 
-use App\Http\Controllers\WelcomeController;
 use App\Http\Controllers\DownloadMenuController;
 use App\Http\Controllers\DownloadShoppingListController;
-use Illuminate\Http\Request;
+use App\Http\Controllers\WelcomeController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', [WelcomeController::class, 'index']);

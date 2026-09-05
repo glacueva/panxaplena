@@ -16,7 +16,7 @@ class DownloadMenuController extends Controller
             'days' => $menuRows->pluck('day')->unique(),
         ];
 
-        if($request->header('Content-Type') === 'application/json') {
+        if ($request->header('Content-Type') === 'application/json') {
             return response()->json($data);
         }
 

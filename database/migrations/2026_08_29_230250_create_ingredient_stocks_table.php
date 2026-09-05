@@ -20,7 +20,7 @@ return new class extends Migration
 
             $table->foreign('ingredient_id')->references('id')->on('ingredients');
             $table->foreign('stock_type_id')->references('id')->on('stock_types');
-            $table->unique(['recipe_id', 'stock_type_id']);
+            $table->unique(['ingredient_id', 'stock_type_id']);
         });
     }
 

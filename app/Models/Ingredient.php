@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use App\Enums\Unit;
+use App\Events\IngredientCreated;
 use Illuminate\Database\Eloquent\Attributes\Fillable;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
@@ -10,6 +11,13 @@ use Illuminate\Database\Eloquent\Model;
 #[Fillable(['name', 'unit', 'ingredient_category_id'])]
 class Ingredient extends Model
 {
+    /**
+     * @var array
+     */
+    protected $dispatchesEvents = [
+        'created' => IngredientCreated::class,
+    ];
+
     use HasFactory;
 
     protected function casts(): array

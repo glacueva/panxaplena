@@ -9,7 +9,7 @@ use Filament\Widgets\TableWidget;
 
 class CurrentShoppingListWidget extends TableWidget
 {
-    protected int | string | array $columnSpan = 'full';
+    protected int|string|array $columnSpan = 'full';
 
     public function table(Table $table): Table
     {
@@ -21,6 +21,6 @@ class CurrentShoppingListWidget extends TableWidget
             ])
             ->groups(['category'])
             ->defaultGroup('category')
-            ->records(fn() => CurrentMenuData::shoppingRows());
+            ->records(fn () => CurrentMenuData::shoppingRows());
     }
 }

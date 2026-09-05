@@ -1,12 +1,12 @@
 <?php
 
 use App\Models\Ingredient;
-use App\Services\CurrentMenuData;
 use App\Models\IngredientCategory;
 use App\Models\Menu;
 use App\Models\MenuRecipe;
 use App\Models\Recipe;
 use App\Models\RecipeIngredient;
+use App\Services\CurrentMenuData;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 

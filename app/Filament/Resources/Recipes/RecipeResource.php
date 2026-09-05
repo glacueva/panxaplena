@@ -21,6 +21,7 @@ class RecipeResource extends Resource
     protected static ?string $model = Recipe::class;
 
     protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedRectangleStack;
+
     protected static UnitEnum|string|null $navigationGroup = 'Settings';
 
     public static function form(Schema $schema): Schema

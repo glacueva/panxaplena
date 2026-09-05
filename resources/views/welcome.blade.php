@@ -62,7 +62,7 @@
         }
 
         .top-links a:hover {
-            border-right-color: magenta;
+            border-right-color: white;
             color: #ffffff;
         }
 

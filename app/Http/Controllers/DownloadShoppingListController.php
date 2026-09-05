@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Services\CurrentMenuData;
-use Barryvdh\DomPDF\Facade\Pdf as PDF;
 use Illuminate\Http\Request;
 
 class DownloadShoppingListController extends Controller
@@ -14,7 +13,7 @@ class DownloadShoppingListController extends Controller
             'list' => collect(CurrentMenuData::shoppingRows())->groupBy('category'),
         ];
 
-        if($request->header('Content-Type') === 'application/json') {
+        if ($request->header('Content-Type') === 'application/json') {
             return response()->json($data);
         }
 
